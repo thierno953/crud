@@ -3,13 +3,16 @@ import "./Infos.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
 import { DELETE_INFO_RESET } from "../redux/constants/infoConstant";
-import { clearErrors, deleteInfo, getAdminInfo } from "../redux/actions/infoAction";
+import {
+  clearErrors,
+  deleteInfo,
+  getAdminInfo,
+} from "../redux/actions/infoAction";
 import { Button } from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { DataGrid } from "@material-ui/data-grid";
 import { Link } from "react-router-dom";
-
 
 const Infos = ({ history }) => {
   const dispatch = useDispatch();
@@ -18,26 +21,26 @@ const Infos = ({ history }) => {
 
   const { error, infos } = useSelector((state) => state.infos);
 
-  const { error: deleteError, isDeleted } = useSelector((state) => state.info);  
+  const { error: deleteError, isDeleted } = useSelector((state) => state.info);
 
   const deleteInfoHandler = (id) => {
     dispatch(deleteInfo(id));
   };
- 
+
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
 
-    if (deleteError) { 
+    if (deleteError) {
       alert.error(deleteError);
       dispatch(clearErrors());
     }
 
     if (isDeleted) {
       alert.success("Item Deleted Successfully");
-      history.push("/info");
+   
       dispatch({ type: DELETE_INFO_RESET });
     }
 
@@ -82,7 +85,7 @@ const Infos = ({ history }) => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={`/info/${params.getValue(params.id, "id")}`}>
+            <Link to={`/admin/info/${params.getValue(params.id, "id")}`}>
               <EditIcon />
             </Link>
 
@@ -108,15 +111,13 @@ const Infos = ({ history }) => {
         username: item.username,
         email: item.email,
         occupation: item.occupation,
-        tagline: item.tagline
+        tagline: item.tagline,
       });
     });
 
   return (
     <>
-   
       <div className="dashboard_content">
-      
         <div className="infoList">
           <h1>ALL INFOS</h1>
 
@@ -126,12 +127,11 @@ const Infos = ({ history }) => {
             pageSize={10}
             disableSelectionOnClick
             className="infoTable"
-            autoHeight
+            autoHeight 
           />
         </div>
       </div>
-  
-  </>
+    </>
   );
 };
 

@@ -31,15 +31,9 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/info" onClick={handleClick}>
+            <Link to="/admin/info" onClick={handleClick}>
               Add Info
             </Link>
-          </li>
-
-          <li>
-            <Link to="/info/:id" onClick={handleClick}> 
-              Login
-            </Link> 
           </li>
          
         </ul>

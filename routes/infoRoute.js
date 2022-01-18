@@ -12,11 +12,11 @@ const router = express.Router();
 
 router.route("/infos").get(getAllInfos);
 
-//router.route("/infos").get(getAdminInfos);
+router.route("/admin/infos").get(getAdminInfos);
 
-router.route("/info").post(createInfo);
+router.route("/admin/info").post(createInfo);
 router
-  .route("/info/:id")
+  .route("/admin/info/:id")
   .get(getInfoDetails)
   .put(updateInfo)
   .delete(deleteInfo);

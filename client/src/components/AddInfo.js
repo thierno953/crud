@@ -27,7 +27,7 @@ const AddInfo = ({ history }) => {
     }
 
     if (success) {
-      alert.success("Product Created Successfully");
+      alert.success("Info Created Successfully");
       history.push("/");
       dispatch({ type: NEW_INFO_RESET });
     }
@@ -120,7 +120,7 @@ const AddInfo = ({ history }) => {
 
           <div id="createProductFormImage">
             {imagesPreview.map((image, index) => (
-              <img key={index} src={image} alt="Product Preview" />
+              <img key={index} src={image} alt="Product Preview" /> 
             ))}
           </div>
 

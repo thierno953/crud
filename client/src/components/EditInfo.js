@@ -31,7 +31,7 @@ const EditInfo = ({ history, match }) => {
     const infoId = match.params.id;
 
     useEffect(() => {
-        if (info && info._id !== infoId) {
+        if (info && info._id !== infoId) { 
           dispatch(getInfoDetails(infoId));
         } else {
           setUsername(info.username);
@@ -52,8 +52,8 @@ const EditInfo = ({ history, match }) => {
         }
     
         if (isUpdated) {
-          alert.success("info Updated Successfully");
-          history.push("/info");
+          alert.success("Info Updated Successfully");
+          history.push("/admin/info");
           dispatch({ type: UPDATE_INFO_RESET });
         }
       }, [dispatch, alert, error, history, isUpdated, infoId, info, updateError]);

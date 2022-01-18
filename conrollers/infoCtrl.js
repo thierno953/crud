@@ -4,7 +4,7 @@ const ErrorHander = require("../utils/errorHander");
 const cloudinary = require("cloudinary");
 
 // create
-exports.createInfo = catchAsyncErrors(async (req, res, next) => {
+exports.createInfo = catchAsyncErrors(async (req, res) => {
   let images = [];
 
   if (typeof req.body.images === "string") {
@@ -34,14 +34,14 @@ exports.createInfo = catchAsyncErrors(async (req, res, next) => {
 });
 
 // all
-exports.getAllInfos = catchAsyncErrors(async (req, res, next) => {
+exports.getAllInfos = catchAsyncErrors(async (req, res) => {
   const infos = await Info.find();
 
   res.status(200).json({ success: true, infos });
 });
 
 // all admin
-exports.getAdminInfos = catchAsyncErrors(async (req, res, next) => {
+exports.getAdminInfos = catchAsyncErrors(async (req, res) => {
   const infos = await Info.find();
 
   res.status(200).json({ success: true, infos });
@@ -88,7 +88,7 @@ exports.updateInfo = catchAsyncErrors(async (req, res, next) => {
         folder: "infos",
       });
 
-      imagesLinks.push({ 
+      imagesLinks.push({
         public_id: result.public_id,
         url: result.secure_url,
       });
@@ -125,6 +125,6 @@ exports.deleteInfo = catchAsyncErrors(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
-    message: "About Delete Successfully",
+    message: "Info Delete Successfully",
   });
 });

@@ -21,7 +21,7 @@ import {
   UPDATE_INFO_SUCCESS,
 } from "../constants/infoConstant";
 
-export const getInfos = () => async (dispatch) => {
+export const getInfos = () => async (dispatch) => { 
   try {
     dispatch({ type: ALL_INFO_REQUEST });
 
@@ -45,7 +45,7 @@ export const getInfoDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: INFO_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`/api/info/${id}`);
+    const { data } = await axios.get(`/api/admin/info/${id}`);
 
     dispatch({
       type: INFO_DETAILS_SUCCESS,
@@ -64,7 +64,7 @@ export const getAdminInfo = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_INFO_REQUEST });
 
-    const { data } = await axios.get("/api/infos");
+    const { data } = await axios.get("/api/admin/infos");
 
     dispatch({ 
       type: ADMIN_INFO_SUCCESS,
@@ -87,7 +87,7 @@ export const createInfo = (infoData) => async (dispatch) => {
       infos: { "Content-Type": "application/json" },
     };
 
-    const { data } = await axios.post(`/api/info`, infoData, config);
+    const { data } = await axios.post(`/api/admin/info`, infoData, config);
 
     dispatch({
       type: NEW_INFO_SUCCESS,
@@ -106,7 +106,7 @@ export const deleteInfo = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_INFO_REQUEST });
 
-    const { data } = await axios.delete(`/api/info/${id}`);
+    const { data } = await axios.delete(`/api/admin/info/${id}`);
 
     dispatch({
       type: DELETE_INFO_SUCCESS,
@@ -129,7 +129,7 @@ export const updateInfo = (id, infoData) => async (dispatch) => {
       infos: { "Content-Type": "application/json" },
     };
 
-    const { data } = await axios.put(`/api/info/${id}`, infoData, config);
+    const { data } = await axios.put(`/api/admin/info/${id}`, infoData, config);
 
     dispatch({
       type: UPDATE_INFO_SUCCESS,

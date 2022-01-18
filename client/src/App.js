@@ -8,13 +8,13 @@ import EditInfo from "./components/EditInfo";
 
 function App() {
   return (
-    <Router> 
+    <Router>
       <Navbar />
       <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/info" component={AddInfo} />
-      <Route exact path="/info/:id" component={EditInfo} />
-      </Switch> 
+        <Route exact path="/" component={Home} />
+        <Route exact path="/admin/info" component={AddInfo} />
+        <Route exact path="/admin/info/:id" component={EditInfo} />
+      </Switch>
     </Router>
   );
 }

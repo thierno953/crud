@@ -10,6 +10,7 @@
     align-items: center;
     justify-content: center;
     padding-top: 100px;
+    margin: 0px 10px;
 }
 .home_info {
   display: flex;
@@ -46,5 +47,11 @@
 @media screen and (max-width: 600px) {
   .Home_content {
       grid-template-columns: 1fr;
+  }
+  .info h3 {
+    font-size: 14px;
+  }
+  .info span {
+    font-size: 14px;
   }
 }

@@ -11,11 +11,10 @@
   border-radius: 10px;
   padding: 20px;
   overflow: hidden;
-
 }
 h1 {
-    text-align: center;
-    font-size: 18px;
+  text-align: center;
+  font-size: 18px;
 }
 form {
   display: flex;
@@ -57,7 +56,6 @@ form .btn {
   font-size: 16px;
 }
 
-
 #createProductFormFile > input {
   display: flex;
   padding: 0%;
@@ -67,11 +65,11 @@ form .btn {
   cursor: pointer;
   max-width: 100%;
   width: 50%;
-  z-index: 2;
+  z-index: 1;
   height: 2vh;
   border: none;
   margin: 0%;
-  font: 200 0.8vmax cursive;
+  font-size: 14px;
   transition: all 0.5s;
   padding: 0 0.5vmax;
   color: rgba(0, 0, 0, 0.623);
